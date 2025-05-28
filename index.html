@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--metadata container-->
+    <!-- use UTF-8 character set so all characters are valid -->
+  <meta charset="UTF-8" /> 
+  <!-- make layout responsive on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Chess</title>
+
+  <!-- Board & layout styling -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body> <!-- everything visible on the page exists on the body-->
+  <main> <!-- semantic wrapper -->
+    <h1>JS Chess (Prototype)</h1>
+
+    <!-- 8×8 squares will be injected here by chess.js -->
+    <div id="board"></div>
+
+    <!-- Move / game status -->
+    <p id="status">White to move</p>
+  </main>
+
+  <!-- loadgs the game logic: defer waits until HTML is parsed -->
+  <script src="chess.js" defer></script>
+</body>
+</html>

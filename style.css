@@ -1,0 +1,54 @@
+/* ----------------- page layout ----------*/
+
+* {
+    box-sizing: border-box; /*include padding and border in width calculations*/
+    margin: 0; /*remove default outer margins*/
+    padding: 0; /*remove default inner padding*/
+}
+
+body {
+    font-family: system-ui, sans-serif; /*use clean OS font stack*/
+    display: flex; /* centre everything horizontally*/
+    justify-content: center; /*horizontally center <main>*/
+    align-items: flex-start; /*align <main> to the top vertically*/
+    padding: 2rem; /*add space around the board*/
+    background: #282c34; /*page background*/
+    color: #f4f4f4; /*text colour*/
+}
+
+/* ------------------ board grid -------------------*/
+:root { /*CSS custom-property scope*/
+    --square-size: 60px; 
+    --light: #f0d9b5;
+    --dark: #b58863;
+}
+
+#board {
+    display: grid; /*use css grid*/
+    grid-template-columns: repeat(8, var(--square-size)); /* 8 equal columns*/
+    grid-template-rows: repeat(8, var(--square-size)); /*8 equal rows*/
+    border: 4px solid #333; 
+    box-shadow: 0 0 12px rgba(0,0,0,4); /*soft shadow*/
+    user-select: none; /*prevents text selection while clicking squares*/
+}
+
+.square {
+    width: var(--square-size); 
+    height: var(--square-size);
+}
+
+/*colours applied in chess.js light dark class toggle when squares are created*/
+.light { background: var(--light);}
+.dark { background: var(--dark);}
+
+/* status text */
+#status {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* hover feature */
+.square:hover {
+    outline: 2px solid rgba(255,255,0,.6); /*yellow glow on hover*/
+    cursor: pointer; /* show hand cursor*/
+}
